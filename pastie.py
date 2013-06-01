@@ -33,7 +33,11 @@ import webbrowser
 
 class PastieTextLeaf(Leaf):
 	def __init__(self, text):
-		Leaf.__init__(self, text, text)
+		if len(text) > 50:
+			name = text[0:47] + '...'
+		else:
+			name = text
+		Leaf.__init__(self, text, name)
 
 
 class ClipboardSource(Source):
