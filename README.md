@@ -20,4 +20,4 @@ Pull requests are always welcome!
 This software is distributed under the [WTF Public License](http://www.wtfpl.net/txt/copying).
 
 # Credits
-Thanks to [http://github.com/fklingler](@fklingler) for the original idea. If you are using Mac OSX, you might want to check out his  [pastie workflow for Alfred](https://github.com/fklingler/alfred-pastie).
+Thanks to [@fklingler](http://github.com/fklingler) for the original idea. If you are using Mac OSX, you might want to check out his  [pastie workflow for Alfred](https://github.com/fklingler/alfred-pastie).
