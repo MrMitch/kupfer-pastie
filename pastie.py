@@ -24,7 +24,6 @@ __version__ = "1"
 __author__ = "Mickael GOETZ"
 
 from kupfer.objects import Source, Leaf, Action
-from kupfer.weaklib import gobject_connect_weakly
 from urllib import urlencode
 from urllib2 import urlopen, HTTPError
 import gtk
