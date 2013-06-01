@@ -23,12 +23,17 @@ __description__ = _("Paste the current content of your clipboard to pastie.org")
 __version__ = "1"
 __author__ = "Mickael GOETZ"
 
-from kupfer.objects import Source, TextLeaf, Action
+from kupfer.objects import Source, Leaf, Action
 from kupfer.weaklib import gobject_connect_weakly
 from urllib import urlencode
 from urllib2 import urlopen, HTTPError
 import gtk
 import webbrowser
+
+
+class PastieTextLeaf(Leaf):
+	def __init__(self, text):
+		Leaf.__init__(self, text, text)
 
 
 class ClipboardSource(Source):
@@ -42,10 +47,10 @@ class ClipboardSource(Source):
 		return True
 
 	def get_items(self):
-		yield TextLeaf(gtk.Clipboard().wait_for_text())
+		yield PastieTextLeaf(gtk.Clipboard().wait_for_text())
 
 	def provides(self):
-		yield TextLeaf
+		yield PastieTextLeaf
 
 
 class PastieAction(Action):
@@ -53,7 +58,7 @@ class PastieAction(Action):
 		Action.__init__(self, self.language)
 		self.syntax = SYNTAXES.index(self.language) + 1
 
-	def activate(self, obj, iobj=None, ctx=None):
+	def activate(self, obj):
 		params = {
 			'paste[parser_id]': self.syntax,
 			'paste[body]': obj.object,
@@ -70,7 +75,7 @@ class PastieAction(Action):
 			webbrowser.open_new_tab('http://pastie.org')
 
 	def item_types(self):
-		yield TextLeaf
+		yield PastieTextLeaf
 
 	def get_description(self):
 		return _("Use ") + self.language + _(" syntax highlighting")
