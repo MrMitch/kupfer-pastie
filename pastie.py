@@ -38,6 +38,9 @@ class PastieTextLeaf(Leaf):
 			name = text
 		Leaf.__init__(self, text, name)
 
+	def get_icon_name(self):
+		return "text-x-generic"
+
 
 class ClipboardSource(Source):
 	def __init__(self):
@@ -54,6 +57,9 @@ class ClipboardSource(Source):
 
 	def provides(self):
 		yield PastieTextLeaf
+
+	def get_icon_name(self):
+		return "edit-paste"
 
 
 class PastieAction(Action):
@@ -84,7 +90,10 @@ class PastieAction(Action):
 		return _("Use ") + self.language + _(" syntax highlighting")
 
 	def get_icon_name(self):
-		return "list-add"
+		#return "document-page-setup"
+		#return "tools-check-spelling"
+		return "accessories-text-editor"
+		#return "applications-development"
 
 #region Classes
 
