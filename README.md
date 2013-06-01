@@ -3,7 +3,7 @@
 ![ALL YOUR BASE ARE BELONG TO US](https://f.cloud.github.com/assets/576772/594231/4c04de78-ca63-11e2-8e22-a8be72e4b0b0.gif)
 
 # Installation
-Copy the `[pastie.py](pastie.py)` file from this repo into `~/.local/share/kupfer/plugins` (you might need to create the folder) and activate the plugin in the Kupfer preferences.
+Copy the `[./pastie.py](pastie.py)` file from this repo into `~/.local/share/kupfer/plugins` (you might need to create the folder) and activate the plugin in the Kupfer preferences.
 
 # Usage
 - open Kupfer
