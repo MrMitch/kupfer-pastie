@@ -49,8 +49,8 @@ class ClipboardSource(Source):
 
 
 class PastieAction(Action):
-	def __init__(self, name=None):
-		Action.__init__(self, name)
+	def __init__(self):
+		Action.__init__(self, self.language)
 		self.syntax = SYNTAXES.index(self.language) + 1
 
 	def activate(self, obj, iobj=None, ctx=None):
